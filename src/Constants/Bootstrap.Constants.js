@@ -4,7 +4,7 @@ import FormControl from 'react-bootstrap/FormControl'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-export { 
+export {
   Navbar,
   Nav,
   Form,
