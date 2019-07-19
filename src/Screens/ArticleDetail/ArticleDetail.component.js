@@ -5,6 +5,7 @@ import Effect from '../../Assets/effect.mp3'
 import {
   Button
 } from '../../Constants/Bootstrap.Constants'
+import SoundContainer from '../../Components/Sound'
 
 class ArticleDetailComponent extends Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class ArticleDetailComponent extends Component {
 
     if (play && !stop) {
       return Sound.status.PLAYING
-    } else if (play && stop || !play && stop) {
+    } else if ((play && stop) || (!play && stop)) {
       return Sound.status.STOPPED
     } else {
       return Sound.status.PAUSED
@@ -64,16 +65,16 @@ class ArticleDetailComponent extends Component {
 
     return (
       <>
-        <Sound
-          url={articleDetail.audio}
-          playStatus={this.controlManifest()}
-          volume={70}
+        <SoundContainer
+          audio={articleDetail.audio}
+          control={this.controlManifest()}
+          vol={70}
         />
         <Button onMouseEnter={this.onHover} onMouseOut={this.onHoverOut} onClick={this.buttonControl}>{play ? 'PAUSE' : 'PLAY'}</Button>
-        <Sound
-          url={Effect}
-          playStatus={buttonHover ? Sound.status.PLAYING : Sound.status.STOPPED}
-          volume={70}
+        <SoundContainer
+          audio={Effect}
+          control={buttonHover ? Sound.status.PLAYING : Sound.status.STOPPED}
+          vol={70}
         />
         <Button onClick={this.stopControl}>STOP</Button>
       </>

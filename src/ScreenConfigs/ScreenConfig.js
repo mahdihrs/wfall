@@ -1,5 +1,5 @@
-import Home from '../Components/Home/Home.component'
-import ArticleDetail from '../Components/ArticleDetail/ArticleDetail.component'
+import Home from '../Screens/Home/Home.component'
+import ArticleDetail from '../Screens/ArticleDetail/ArticleDetail.component'
 
 export {
   Home,

@@ -34,8 +34,7 @@ class HomeComponent extends Component {
       <>
         {dummies.map(article => {
           return (
-            <>
-              {/* <Button variant="primary">{article.title}</Button> */}
+            <div key={article.id}>
               <Link 
                 to={{
                   pathname: '/detail',
@@ -44,15 +43,9 @@ class HomeComponent extends Component {
               >
                 {article.title}
               </Link>
-            </>
+            </div>
           )
         })}
-        {/* <Sound
-          url={data.article2.audio}
-          playStatus={Sound.status.PLAYING}
-          // autoLoad={true}
-          volume={70}
-        /> */}
       </>
     )
   }
